@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mvc="http://www.springframework.org/schema/mvc"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/mvc
+		http://www.springframework.org/schema/mvc/spring-mvc-3.2.xsd
+		http://www.springframework.org/schema/beans
+		http://www.springframework.org/schema/beans/spring-beans-3.2.xsd
+		http://www.springframework.org/schema/context 
+		http://www.springframework.org/schema/context/spring-context-3.2.xsd ">
+		
+	<!-- 当我们需要controller返回一个map的json对象时，可以设定<mvc:annotation-driven />	 -->
+	<mvc:annotation-driven />
+
+	<mvc:resources mapping="/images/**" location="/resources/images/" />
+	<mvc:resources mapping="/js/**" location="/resources/js/" />
+	<mvc:resources mapping="/css/**" location="/resources/css/" />
+	<mvc:resources mapping="/upload/**" location="/upload/" /> 
+   
+	<!-- SpringMVC上传文件时，需要配置MultipartResolver处理器 -->
+	<bean id="multipartResolver"
+		class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
+		<!-- 指定所上传文件的总大小不能超过500KB。注意maxUploadSize属性的限制不是针对单个文件，而是所有文件的容量之和 -->
+		<property name="maxUploadSize" value="5000000" />
+	</bean> 
+	
+	<!-- interceptors -->
+	 <mvc:interceptors>
+		<mvc:interceptor>
+			<mvc:mapping path="/teacher/*" />
+			<bean class="online.examination.web.intercepter.CommonIntercepter"></bean>
+		</mvc:interceptor>
+	</mvc:interceptors> 
+
+	<!-- SpringMVC在超出上传文件限制时，会抛出org.springframework.web.multipart.MaxUploadSizeExceededException -->
+	<!-- 该异常是SpringMVC在检查上传的文件信息时抛出来的，而且此时还没有进入到Controller方法中 -->
+	<!-- <bean id="exceptionResolver"
+		class="org.springframework.web.servlet.handler.SimpleMappingExceptionResolver">
+		<property name="exceptionMappings">
+			<props>
+				遇到MaxUploadSizeExceededException异常时，自动跳转到/WEB-INF/jsp/error_fileupload.jsp页面
+				<prop
+					key="org.springframework.web.multipart.MaxUploadSizeExceededException">error_fileupload</prop>
+			</props>
+		</property>
+	</bean> -->
+
+	<!-- 让前端控制器dispatcher只去搜索注解为controller的类 -->
+    <context:component-scan base-package="online.examination.web.mvc" use-default-filters="false">
+        <context:include-filter type="annotation"
+            expression="org.springframework.stereotype.Controller" />
+    </context:component-scan>
+
+	<!-- <bean id="localeResolver"
+		class="org.springframework.web.servlet.i18n.SessionLocaleResolver" /> -->
+ 
+   <!-- 配置jsp视图解析器 -->
+	 <bean id="viewResolver"
+		class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+		<property name="viewClass"
+			value="org.springframework.web.servlet.view.JstlView" />
+		<property name="prefix" value="/WEB-INF/pages/" />
+		<property name="suffix" value=".jsp" />
+	</bean> 
+	
+	<!-- <bean id="templateResolver"   
+        class="org.thymeleaf.templateresolver.ServletContextTemplateResolver">  
+        <property name="prefix" value="/thymeleaf/" />  
+        <property name="suffix" value=".html" />  
+        <property name="templateMode" value="HTML5" />  
+        Template cache is set to false (default is true).         
+        <property name="cacheable" value="false" />  
+        <property name="characterEncoding" value="UTF-8"/>  
+    </bean> 
+     <bean id="templateEngine" class="org.thymeleaf.spring4.SpringTemplateEngine">  
+        <property name="templateResolver" ref="templateResolver" />  
+    </bean> -->
+</beans>

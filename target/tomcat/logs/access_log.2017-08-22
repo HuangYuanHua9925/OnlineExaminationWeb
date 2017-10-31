@@ -1,0 +1,16 @@
+0:0:0:0:0:0:0:1 - - [22/Aug/2017:18:43:42 +0800] "GET /OnlineExaminationWeb/teacher/toUpdateTeacher?id=6 HTTP/1.1" 200 2168 http-bio-8080-exec-3 7582
+0:0:0:0:0:0:0:1 - - [22/Aug/2017:18:43:43 +0800] "GET /OnlineExaminationWeb/css/index/index.css HTTP/1.1" 304 - http-bio-8080-exec-4 116
+0:0:0:0:0:0:0:1 - - [22/Aug/2017:18:43:43 +0800] "GET /OnlineExaminationWeb/js/common/jquery.min.js;jsessionid=8E2A171F2B0FDAA2B08E6F8A31740DBA HTTP/1.1" 200 84345 http-bio-8080-exec-5 413
+0:0:0:0:0:0:0:1 - - [22/Aug/2017:18:43:44 +0800] "GET /OnlineExaminationWeb/images/bd.jpg HTTP/1.1" 304 - http-bio-8080-exec-7 214
+0:0:0:0:0:0:0:1 - - [22/Aug/2017:18:43:45 +0800] "GET /favicon.ico HTTP/1.1" 404 - http-bio-8080-exec-9 0
+0:0:0:0:0:0:0:1 - - [22/Aug/2017:18:44:16 +0800] "POST /OnlineExaminationWeb/teacherLogin HTTP/1.1" 200 31 http-bio-8080-exec-2 7143
+0:0:0:0:0:0:0:1 - - [22/Aug/2017:18:44:20 +0800] "GET /OnlineExaminationWeb/teacher/teacherIndex HTTP/1.1" 200 4271 http-bio-8080-exec-1 4099
+0:0:0:0:0:0:0:1 - - [22/Aug/2017:18:44:21 +0800] "GET /OnlineExaminationWeb/js/common/jquery.min.js HTTP/1.1" 304 - http-bio-8080-exec-7 5
+0:0:0:0:0:0:0:1 - - [22/Aug/2017:18:44:21 +0800] "GET /OnlineExaminationWeb/js/common/bootstrap.min.3.3.7.js HTTP/1.1" 304 - http-bio-8080-exec-8 457
+0:0:0:0:0:0:0:1 - - [22/Aug/2017:18:44:21 +0800] "GET /OnlineExaminationWeb/js/common/bootstrap-table.min.1.11.1.js HTTP/1.1" 304 - http-bio-8080-exec-6 491
+0:0:0:0:0:0:0:1 - - [22/Aug/2017:18:44:21 +0800] "GET /OnlineExaminationWeb/css/common/common.css HTTP/1.1" 304 - http-bio-8080-exec-1 572
+0:0:0:0:0:0:0:1 - - [22/Aug/2017:18:44:22 +0800] "GET /OnlineExaminationWeb/css/common/bootstrap-table.min.css HTTP/1.1" 304 - http-bio-8080-exec-5 713
+0:0:0:0:0:0:0:1 - - [22/Aug/2017:18:44:22 +0800] "GET /OnlineExaminationWeb/css/common/bootstrap.min.css HTTP/1.1" 304 - http-bio-8080-exec-4 741
+0:0:0:0:0:0:0:1 - - [22/Aug/2017:18:44:22 +0800] "GET /OnlineExaminationWeb/images/teacher/1.jpg HTTP/1.1" 304 - http-bio-8080-exec-5 292
+0:0:0:0:0:0:0:1 - - [22/Aug/2017:18:44:49 +0800] "GET /OnlineExaminationWeb/teacher/teacherList HTTP/1.1" 200 6884 http-bio-8080-exec-3 398
+0:0:0:0:0:0:0:1 - - [22/Aug/2017:18:44:52 +0800] "POST /OnlineExaminationWeb/teacher/getTeachersByPage HTTP/1.1" 200 396 http-bio-8080-exec-10 147
